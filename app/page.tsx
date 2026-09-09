@@ -1,10 +1,19 @@
 import { AnimatedGrid } from "@/components/ui/animated-grid";
+import { WaitlistForm } from "@/components/waitlist-form";
 
 const displayFont = {
   fontFamily:
     "'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif",
   fontStretch: "condensed" as const,
 };
+
+const lineup = [
+  { number: "01", color: "#FF0000" },
+  { number: "02", color: "#FF0040" },
+  { number: "03", color: "#FF0080" },
+  { number: "04", color: "#FF00BF" },
+  { number: "05", color: "#FF00FF" },
+];
 
 export default function Home() {
   return (
@@ -15,6 +24,9 @@ export default function Home() {
             [ai swim]
           </span>
           <nav className="hidden gap-8 text-sm font-medium text-white/70 sm:flex">
+            <a href="#lineup" className="transition-colors hover:text-white">
+              Lineup
+            </a>
             <a href="#thesis" className="transition-colors hover:text-white">
               Thesis
             </a>
@@ -28,6 +40,12 @@ export default function Home() {
               Roadmap
             </a>
           </nav>
+          <a
+            href="#waitlist"
+            className="hidden rounded-md bg-[#FF3399] px-4 py-2 text-xs font-semibold text-black transition-opacity hover:opacity-90 sm:inline-block"
+          >
+            Join waitlist
+          </a>
         </div>
       </header>
 
@@ -51,6 +69,80 @@ export default function Home() {
         <p className="pointer-events-none absolute bottom-16 z-10 max-w-md px-6 text-center text-sm text-white/60">
           The first television network built for AI-made cartoons.
         </p>
+      </section>
+
+      <section id="lineup" className="border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-xs font-semibold tracking-[0.2em] text-[#FF3399] uppercase">
+            First lineup
+          </p>
+          <h2
+            className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
+            style={displayFont}
+          >
+            Five shows. One launch.
+          </h2>
+          <p className="mt-5 max-w-xl text-white/60">
+            The hand-picked lineup airing at Block 01 — each with a 30-second
+            preview. Covers unlock as we get closer to launch.
+          </p>
+
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {lineup.map((show) => (
+              <div
+                key={show.number}
+                className="group relative aspect-video overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-1"
+                style={{
+                  background: `linear-gradient(160deg, ${show.color} 0%, rgba(0,0,0,0.92) 78%)`,
+                }}
+              >
+                <span
+                  className="absolute top-3 left-4 text-sm font-semibold text-white/70"
+                  style={displayFont}
+                >
+                  {show.number}
+                </span>
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    className="h-5 w-5 text-white/80"
+                    aria-hidden="true"
+                  >
+                    <rect x="5" y="11" width="14" height="9" rx="1.5" />
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                  </svg>
+                  <span className="text-[10px] font-semibold tracking-[0.15em] text-white/80 uppercase">
+                    Reveals at launch
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="waitlist" className="border-b border-white/10">
+        <div className="mx-auto max-w-3xl px-6 py-24">
+          <p className="text-xs font-semibold tracking-[0.2em] text-[#FF3399] uppercase">
+            Get notified
+          </p>
+          <h2
+            className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
+            style={displayFont}
+          >
+            Be first when the queue opens.
+          </h2>
+          <p className="mt-5 max-w-xl text-white/60">
+            Submissions open in Block 02. Join the list and we&apos;ll let you
+            know the moment the network is ready for your show.
+          </p>
+          <div className="mt-8">
+            <WaitlistForm />
+          </div>
+        </div>
       </section>
 
       <section id="thesis" className="mx-auto max-w-3xl px-6 py-28">
