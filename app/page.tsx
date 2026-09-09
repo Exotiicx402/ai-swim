@@ -2,7 +2,7 @@ import { AnimatedGrid } from "@/components/ui/animated-grid";
 
 export default function Home() {
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-black">
       <AnimatedGrid
         startColor={[255, 0, 0]}
         endColor={[255, 0, 255]}
