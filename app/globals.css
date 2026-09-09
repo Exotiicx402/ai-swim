@@ -128,3 +128,9 @@
     @apply font-sans;
   }
 }
+
+.font-display {
+  font-family: "Helvetica Neue Condensed Bold", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-stretch: condensed;
+}
