@@ -14,8 +14,15 @@ export default function Home() {
         animationDuration="2s"
       />
 
-      <span className="pointer-events-none absolute z-10 text-center text-7xl font-semibold leading-none tracking-tighter text-white whitespace-pre-wrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
-        ai swim
+      <span
+        className="pointer-events-none absolute z-10 text-center text-7xl font-bold leading-none tracking-tighter text-white whitespace-pre-wrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
+        style={{
+          fontFamily:
+            "'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+          fontStretch: "condensed",
+        }}
+      >
+        [ai swim]
       </span>
     </div>
   );
