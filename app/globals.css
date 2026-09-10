@@ -183,7 +183,7 @@
 .manifesto-section .section-index { color: #696962; }
 .manifesto-section h2 { font-size: clamp(42px, 6.7vw, 87px); margin-top: 82px; }
 .manifesto-section h2 span { color: #77776f; }
-.manifesto-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: end; margin-top: 55px; }
+.manifesto-bottom { display: grid; grid-template-columns: auto 1fr; gap: 72px; align-items: end; margin-top: 55px; }
 .bracket-mark { font-size: 90px; font-weight: 300; letter-spacing: -.09em; line-height: 1; }
 .manifesto-bottom p { font-size: 16px; line-height: 1.75; max-width: 485px; }
 .manifesto-bottom p + p { margin-top: 18px; color: #6a6a62; }
