@@ -9,11 +9,11 @@ const displayFont = {
 };
 
 const lineup = [
-  { number: "01", color: "#FF0000", cover: "/covers/show-01.jpg" },
-  { number: "02", color: "#FF0040", cover: "/covers/show-02.jpg" },
-  { number: "03", color: "#FF0080", cover: "/covers/show-03.jpg" },
-  { number: "04", color: "#FF00BF", cover: "/covers/show-04.jpg" },
-  { number: "05", color: "#FF00FF", cover: "/covers/show-05.jpg" },
+  { number: "01", cover: "/covers/show-01.jpg" },
+  { number: "02", cover: "/covers/show-02.jpg" },
+  { number: "03", cover: "/covers/show-03.jpg" },
+  { number: "04", cover: "/covers/show-04.jpg" },
+  { number: "05", cover: "/covers/show-05.jpg" },
 ];
 
 export default function Home() {
@@ -73,29 +73,12 @@ export default function Home() {
       </section>
 
       <section id="lineup" className="border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <p className="text-xs font-semibold tracking-[0.2em] text-[#FF3399] uppercase">
-            First lineup
-          </p>
-          <h2
-            className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
-            style={displayFont}
-          >
-            Five shows. One launch.
-          </h2>
-          <p className="mt-5 max-w-xl text-white/60">
-            The hand-picked lineup airing at Block 01 — each with a
-            30-second preview.
-          </p>
-
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {lineup.map((show) => (
               <div
                 key={show.number}
                 className="group relative aspect-[2/3] overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(255,51,153,0.25)]"
-                style={{
-                  background: `linear-gradient(160deg, ${show.color} 0%, rgba(0,0,0,0.92) 78%)`,
-                }}
               >
                 <Image
                   src={show.cover}
