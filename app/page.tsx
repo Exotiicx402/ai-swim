@@ -94,7 +94,6 @@ export default function Home() {
       <main className="network-page">
         <section id="waitlist" className="network-wrap signup-section">
           <div>
-            <p className="network-label"><span className="signal-dot" /> THE NEXT CHANNEL IS COMING</p>
             <h2>Stay tuned.</h2>
             <p className="network-copy">A new home for independent AI animation.<br />Be first to know when submissions open.</p>
           </div>
