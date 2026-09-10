@@ -29,6 +29,7 @@ export function WaitlistForm() {
         />
         <button
           type="submit"
+          className="network-button"
           disabled={pending || done}
         >
           {done ? "You're in" : pending ? "Joining…" : "Join waitlist"}

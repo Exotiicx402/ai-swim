@@ -18,7 +18,7 @@ const lineup = [
 
 export default function Home() {
   return (
-    <div className="bg-black text-white">
+    <div className="site-shell bg-black text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <span className="text-lg font-bold tracking-tight" style={displayFont}>
@@ -43,9 +43,9 @@ export default function Home() {
           </nav>
           <a
             href="#waitlist"
-            className="hidden rounded-md bg-[#FF3399] px-4 py-2 text-xs font-semibold text-black transition-opacity hover:opacity-90 sm:inline-block"
+            className="network-button header-cta"
           >
-            Join waitlist
+            Join waitlist <span aria-hidden="true">↗</span>
           </a>
         </div>
       </header>
@@ -112,15 +112,19 @@ export default function Home() {
               <span className="bracket-mark" aria-hidden="true">[↗]</span>
               <div>
                 <p>A whole new generation of creators is making original worlds, recurring characters, and shows worth following. They deserve a home beyond the feed.</p>
-                <p>[ai swim] brings them together. An independent cartoon network, programmed by the people watching.</p>
+                <p>[ai swim] brings them together. Community favorites share the lineup with originals we commission, develop, and produce in-house.</p>
               </div>
+            </div>
+            <div className="production-commitment">
+              <div><p className="network-label">NETWORK EARNINGS → ORIGINAL SHOWS</p><h3>We help make what comes next.</h3></div>
+              <p>Part of what the network earns goes back into making shows: commissioning original work, producing in-house, and helping creators develop the shows that find their audience here.</p>
             </div>
           </div>
         </section>
 
         <section id="how" className="network-wrap network-section">
           <div className="section-index"><span>02 / HOW IT WORKS</span><span>FROM FIRST FRAME TO AIRTIME</span></div>
-          <div className="section-heading"><h2>Good shows.<br />Their audience.<br /><span>A direct connection.</span></h2><p className="network-copy">A simple path from a creator’s upload to the network’s lineup. Here’s the system we’re building.</p></div>
+          <div className="section-heading"><h2>Good shows.<br />Their audience.<br /><span>A direct connection.</span></h2><p className="network-copy">Community curation brings great shows to the lineup. Reinvesting network earnings helps us build the next ones.</p></div>
           <div className="process-grid">
             {[
               { number: "01", title: "Make something.", detail: "CREATOR → QUEUE", body: "Submit your finished episode, pilot, or short. Any AI tool. Any animation style. Your own point of view." },
@@ -152,7 +156,7 @@ export default function Home() {
               { block: "01", title: "Signal on", label: "LAUNCH", body: "Establish the network, open community channels, and introduce a hand-picked first lineup." },
               { block: "02", title: "Open the queue", label: "SUBMISSIONS & VOTING", body: "Open creator submissions, introduce audience curation, and activate the creator rewards pool." },
               { block: "03", title: "Make it a habit", label: "SCHEDULED PROGRAMMING", body: "Build a weekly schedule. Give recurring shows season slots and audiences a reason to tune back in." },
-              { block: "04", title: "Build new worlds", label: "ORIGINAL PRODUCTIONS", body: "Commission breakout creators and explore licensing and merchandise for the shows people love." },
+              { block: "04", title: "Build new worlds", label: "ORIGINAL PRODUCTIONS", body: "Reinvest a portion of network earnings into in-house productions, original commissions, and development support for standout creators." },
             ].map((item) => <article key={item.block} className="schedule-row"><span className="schedule-block">BLOCK {item.block}</span><div><h3>{item.title}</h3><span className="network-label">{item.label}</span></div><p>{item.body}</p><span className="schedule-arrow" aria-hidden="true">↗</span></article>)}
           </div>
           <p className="schedule-note">The direction is set. Features and timing will evolve as we build.</p>
@@ -160,7 +164,7 @@ export default function Home() {
 
         <footer className="network-footer">
           <div className="network-wrap">
-            <div className="footer-invite"><h2>See you on<br />the other side.</h2><a href="#waitlist" className="footer-cta">Get on the list <span aria-hidden="true">↗</span></a></div>
+            <div className="footer-invite"><h2>See you on<br />the other side.</h2><a href="#waitlist" className="network-button">Get on the list <span aria-hidden="true">↗</span></a></div>
             <div className="footer-rule"><a href="#lineup" className="footer-brand" style={displayFont}>[ai swim]</a><span>INDEPENDENT ANIMATION. SHARED AIRTIME.</span><nav aria-label="Footer"><a href="#thesis">The idea</a><a href="#swim">$SWIM</a><a href="#roadmap">Schedule</a></nav></div>
             <p className="footer-disclaimer">$SWIM is a utility and curation token for the [ai swim] network — it is not a security, an investment contract, or a promise of profit, and nothing on this page is financial advice. Token mechanics, timelines, and features are in design and subject to change before launch.</p>
           </div>
