@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { AnimatedGrid } from "@/components/ui/animated-grid";
 import { WaitlistForm } from "@/components/waitlist-form";
 
@@ -8,11 +9,11 @@ const displayFont = {
 };
 
 const lineup = [
-  { number: "01", color: "#FF0000" },
-  { number: "02", color: "#FF0040" },
-  { number: "03", color: "#FF0080" },
-  { number: "04", color: "#FF00BF" },
-  { number: "05", color: "#FF00FF" },
+  { number: "01", color: "#FF0000", cover: "/covers/show-01.jpg" },
+  { number: "02", color: "#FF0040", cover: "/covers/show-02.jpg" },
+  { number: "03", color: "#FF0080", cover: "/covers/show-03.jpg" },
+  { number: "04", color: "#FF00BF", cover: "/covers/show-04.jpg" },
+  { number: "05", color: "#FF00FF", cover: "/covers/show-05.jpg" },
 ];
 
 export default function Home() {
@@ -83,41 +84,26 @@ export default function Home() {
             Five shows. One launch.
           </h2>
           <p className="mt-5 max-w-xl text-white/60">
-            The hand-picked lineup airing at Block 01 — each with a 30-second
-            preview. Covers unlock as we get closer to launch.
+            The hand-picked lineup airing at Block 01 — each with a
+            30-second preview.
           </p>
 
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {lineup.map((show) => (
               <div
                 key={show.number}
-                className="group relative aspect-video overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-1"
+                className="group relative aspect-[2/3] overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(255,51,153,0.25)]"
                 style={{
                   background: `linear-gradient(160deg, ${show.color} 0%, rgba(0,0,0,0.92) 78%)`,
                 }}
               >
-                <span
-                  className="absolute top-3 left-4 text-sm font-semibold text-white/70"
-                  style={displayFont}
-                >
-                  {show.number}
-                </span>
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    className="h-5 w-5 text-white/80"
-                    aria-hidden="true"
-                  >
-                    <rect x="5" y="11" width="14" height="9" rx="1.5" />
-                    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-                  </svg>
-                  <span className="text-[10px] font-semibold tracking-[0.15em] text-white/80 uppercase">
-                    Reveals at launch
-                  </span>
-                </div>
+                <Image
+                  src={show.cover}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
