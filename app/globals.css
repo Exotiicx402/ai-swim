@@ -134,3 +134,26 @@
     Arial, sans-serif;
   font-stretch: condensed;
 }
+
+@keyframes lineup-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.lineup-track {
+  animation: lineup-scroll 28s linear infinite;
+}
+
+.lineup-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lineup-track {
+    animation: none;
+  }
+}

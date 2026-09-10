@@ -72,24 +72,22 @@ export default function Home() {
         </p>
       </section>
 
-      <section id="lineup" className="border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {lineup.map((show) => (
-              <div
-                key={show.number}
-                className="group relative aspect-[2/3] overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(255,51,153,0.25)]"
-              >
-                <Image
-                  src={show.cover}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
+      <section id="lineup" className="overflow-hidden border-b border-white/10 py-16">
+        <div className="lineup-track flex w-max gap-4">
+          {[...lineup, ...lineup].map((show, i) => (
+            <div
+              key={`${show.number}-${i}`}
+              className="group relative aspect-[2/3] w-[220px] shrink-0 overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(255,51,153,0.25)] sm:w-[260px]"
+            >
+              <Image
+                src={show.cover}
+                alt=""
+                fill
+                sizes="260px"
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
