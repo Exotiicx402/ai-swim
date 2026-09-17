@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatedGrid } from "@/components/ui/animated-grid";
 import { WaitlistForm } from "@/components/waitlist-form";
 
@@ -45,7 +46,7 @@ export default function Home() {
             href="#waitlist"
             className="network-button header-cta"
           >
-            Join waitlist <span aria-hidden="true">↗</span>
+            Join waitlist <ArrowUpRight aria-hidden="true" className="icon-arrow" />
           </a>
         </div>
       </header>
@@ -108,7 +109,7 @@ export default function Home() {
             <div className="section-index"><span>01 / THE IDEA</span></div>
             <h2>The cartoons are here.<br /><span>Give them a channel.</span></h2>
             <div className="manifesto-bottom">
-              <span className="bracket-mark" aria-hidden="true">[↗]</span>
+              <span className="bracket-mark" aria-hidden="true">[<ArrowUpRight className="icon-arrow" />]</span>
               <div>
                 <p>A whole new generation of creators is making original worlds, recurring characters, and shows worth following. They deserve a home beyond the feed.</p>
                 <p>[ai swim] brings them together. Community favorites share the lineup with originals we commission, develop, and produce in-house.</p>
@@ -129,7 +130,7 @@ export default function Home() {
               { number: "01", title: "Make something.", detail: "CREATOR → QUEUE", body: "Submit your finished episode, pilot, or short. Any AI tool. Any animation style. Your own point of view." },
               { number: "02", title: "Find your people.", detail: "AUDIENCE → VOTE", body: "$SWIM holders watch the queue and vote on what deserves a slot. The audience helps shape the channel." },
               { number: "03", title: "Take the slot.", detail: "LINEUP → CREATOR", body: "Top-voted shows join the featured lineup, with creator rewards planned for the shows that make it to air." },
-            ].map((step) => <article key={step.number} className="process-step"><div className="process-number"><span>{step.number}</span><span aria-hidden="true">↗</span></div><h3>{step.title}</h3><p>{step.body}</p><span className="network-label">{step.detail}</span></article>)}
+            ].map((step) => <article key={step.number} className="process-step"><div className="process-number"><span>{step.number}</span><ArrowUpRight aria-hidden="true" className="icon-arrow" /></div><h3>{step.title}</h3><p>{step.body}</p><span className="network-label">{step.detail}</span></article>)}
           </div>
         </section>
 
@@ -156,14 +157,14 @@ export default function Home() {
               { phase: "02", title: "Open the queue", body: "Open creator submissions, introduce audience curation, and activate the creator rewards pool." },
               { phase: "03", title: "Make it a habit", body: "Build a weekly schedule. Give recurring shows season slots and audiences a reason to tune back in." },
               { phase: "04", title: "Build new worlds", body: "Reinvest a portion of network earnings into in-house productions, original commissions, and development support for standout creators." },
-            ].map((item) => <article key={item.phase} className="schedule-row"><span className="schedule-block">PHASE {item.phase}</span><div><h3>{item.title}</h3></div><p>{item.body}</p><span className="schedule-arrow" aria-hidden="true">↗</span></article>)}
+            ].map((item) => <article key={item.phase} className="schedule-row"><span className="schedule-block">PHASE {item.phase}</span><div><h3>{item.title}</h3></div><p>{item.body}</p><ArrowUpRight aria-hidden="true" className="icon-arrow schedule-arrow" /></article>)}
           </div>
           <p className="schedule-note">The direction is set. Features and timing will evolve as we build.</p>
         </section>
 
         <footer className="network-footer">
           <div className="network-wrap">
-            <div className="footer-invite"><h2>See you on<br />the other side.</h2><a href="#waitlist" className="network-button">Get on the list <span aria-hidden="true">↗</span></a></div>
+            <div className="footer-invite"><h2>See you on<br />the other side.</h2><a href="#waitlist" className="network-button">Get on the list <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
             <div className="footer-rule"><a href="#lineup" className="footer-brand" style={displayFont}>[ai swim]</a><nav aria-label="Footer"><a href="#thesis">The idea</a><a href="#swim">$SWIM</a><a href="#roadmap">Schedule</a></nav></div>
             <p className="footer-disclaimer">$SWIM is a utility and curation token for the [ai swim] network — it is not a security, an investment contract, or a promise of profit, and nothing on this page is financial advice. Token mechanics, timelines, and features are in design and subject to change before launch.</p>
           </div>

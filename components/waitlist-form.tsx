@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { joinWaitlist, type WaitlistState } from "@/app/actions/waitlist";
 
 const initialState: WaitlistState = { status: "idle" };
@@ -33,7 +34,11 @@ export function WaitlistForm() {
           disabled={pending || done}
         >
           {done ? "You're in" : pending ? "Joining…" : "Join waitlist"}
-          <span aria-hidden="true">{done ? "✓" : "↗"}</span>
+          {done ? (
+            <Check aria-hidden="true" className="icon-arrow" />
+          ) : (
+            <ArrowUpRight aria-hidden="true" className="icon-arrow" />
+          )}
         </button>
         </div>
       </form>

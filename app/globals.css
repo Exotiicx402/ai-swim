@@ -157,6 +157,16 @@
     animation: none;
   }
 }
+
+.icon-arrow {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+  stroke-width: 1.75;
+}
+
 /* The network: restrained broadcast typography and editorial spacing. */
 .network-page { --paper: #eeede7; --muted: #94948f; color: var(--paper); background: #080808; }
 .network-page section[id], #lineup { scroll-margin-top: 85px; }
