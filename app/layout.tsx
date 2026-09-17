@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "[ai swim]",
   description:
-    "[ai swim] is building a Web3 entertainment network for AI-powered shows and films. Explore planned $SWIM token utility, creator development, and ICO updates.",
+    "Discover original show previews on ai swim, a Web3 entertainment network where $SWIM holders help shape the lineup and selected projects become original productions.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

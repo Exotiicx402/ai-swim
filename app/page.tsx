@@ -111,8 +111,8 @@ export default function Home() {
             <div className="manifesto-bottom">
               <span className="bracket-mark" aria-hidden="true">[<ArrowUpRight className="icon-arrow" />]</span>
               <div>
-                <p>[ai swim] is building an independent Web3 entertainment network for exceptional AI-powered series and films. A home for stories with a point of view, characters that stay with you, and worlds worth returning to.</p>
-                <p>We’re here to discover emerging producers and help them build lasting bodies of work—with creative development, investment in original productions, and a deliberate path to an audience.</p>
+                <p>ai swim is a Web3 entertainment network where independent producers introduce original shows through pilot previews.</p>
+                <p>The community discovers them, $SWIM holders help shape the lineup, and the network develops selected projects into original productions.</p>
               </div>
             </div>
             <div className="production-commitment">
