@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SwimCoin } from "@/components/swim-coin";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedGrid } from "@/components/ui/animated-grid";
 import { WaitlistForm } from "@/components/waitlist-form";
@@ -69,7 +70,7 @@ export default function Home() {
           [ai swim]
         </span>
         <p className="pointer-events-none absolute bottom-16 z-10 max-w-md px-6 text-center text-sm text-white/60">
-          Original worlds. A Web3 network behind them.
+          Independent voices. Original worlds. A Web3 network.
         </p>
       </section>
 
@@ -96,7 +97,7 @@ export default function Home() {
         <section id="waitlist" className="network-wrap signup-section">
           <div>
             <h2>Stay tuned.</h2>
-            <p className="network-copy">Shows worth coming back to. Original films.<br />Follow the network as our first slate takes shape.</p>
+            <p className="network-copy">Discover your next favorite show before it becomes one.<br />Follow the previews. Meet the producers. Be part of what’s next.</p>
           </div>
           <div className="signup-form">
             <WaitlistForm />
@@ -107,7 +108,7 @@ export default function Home() {
         <section id="thesis" className="manifesto-section">
           <div className="network-wrap">
             <div className="section-index"><span>01 / THE NETWORK</span></div>
-            <h2>Original worlds.<br /><span>A network behind them.</span></h2>
+            <h2>The freedom to create.<br /><span>The backing to be seen.</span></h2>
             <div className="manifesto-bottom">
               <span className="bracket-mark" aria-hidden="true">[<ArrowUpRight className="icon-arrow" />]</span>
               <div>
@@ -124,12 +125,12 @@ export default function Home() {
 
         <section id="how" className="network-wrap network-section">
           <div className="section-index"><span>02 / FOR PRODUCERS</span></div>
-          <div className="section-heading"><h2>A strong vision.<br /><span>The backing to build it.</span></h2><p className="network-copy">We’re building a development home for showrunners and filmmakers, from a first concept through production and release.</p></div>
+          <div className="section-heading"><h2>Your vision.<br /><span>Room to make it real.</span></h2><p className="network-copy">Independent producers need resources, collaborators, and an audience. We’re building a network that supports distinctive creative voices from the first preview to release.</p></div>
           <div className="process-grid">
             {[
-              { number: "01", title: "Develop the vision.", detail: "TALENT & DEVELOPMENT", body: "Discover distinctive producers and work with selected talent on the story, characters, and creative direction that can carry a series or a film." },
-              { number: "02", title: "Back the production.", detail: "FUNDING & ORIGINALS", body: "Invest in selected projects, commission original work, and develop productions in-house. Give ambitious ideas the resources and creative support to reach the screen." },
-              { number: "03", title: "Build the audience.", detail: "PROGRAMMING & RELEASE", body: "Give each show a considered place in the lineup, a release plan, and promotion that helps viewers discover it—and come back for the next episode." },
+              { number: "01", title: "Develop the vision.", detail: "TALENT & DEVELOPMENT", body: "Bring a distinctive point of view. We aim to give selected producers the creative space and development support to build their own characters, stories, and worlds." },
+              { number: "02", title: "Back the production.", detail: "FUNDING & ORIGINALS", body: "Our model brings funding, production tools, and creative collaborators to selected projects, alongside original commissions and in-house productions." },
+              { number: "03", title: "Build the audience.", detail: "PROGRAMMING & RELEASE", body: "A home on the network, a considered release plan, and previews made to travel through the feed. Help the right viewers find a show and stay for what comes next." },
             ].map((step) => <article key={step.number} className="process-step"><div className="process-number"><span>{step.number}</span><ArrowUpRight aria-hidden="true" className="icon-arrow" /></div><h3>{step.title}</h3><p>{step.body}</p><span className="network-label">{step.detail}</span></article>)}
           </div>
         </section>
@@ -139,11 +140,12 @@ export default function Home() {
             <div className="token-intro">
               <p className="network-label">03 / THE NETWORK TOKEN</p>
               <h2 id="swim-heading">$SWIM</h2>
-              <p>A voice in the lineup.<br />A role in what comes next.</p>
-              <p className="token-description">The token at the heart of our Web3 network. Our planned ICO introduces $SWIM, with utility designed around audience curation, creator access, and rewards.</p>
+              <SwimCoin />
+              <p>Discover it early.<br />Help shape what’s next.</p>
+              <p className="token-description">The token connects the community to the network’s next chapter. Our planned ICO introduces $SWIM for audience curation, creator access, rewards, and community proposals.</p>
               <a href="#waitlist" className="network-button token-cta">Get ICO updates <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a>
             </div>
-            <div className="token-rows">
+            <div className="token-rows utility-cards">
               {[
                 { title: "Vote on show previews", body: "Planned holder voting lets the community champion pilot previews and help shape the lineup. Audience support informs the network’s programming and development decisions." },
                 { title: "Support creator rewards", body: "A planned $SWIM rewards pool recognizes creators whose work is selected for the network, helping support the people making the next shows." },
@@ -157,20 +159,33 @@ export default function Home() {
 
         <section id="standards" className="token-section">
           <div className="network-wrap token-layout">
-            <div className="token-intro"><p className="network-label">04 / OUR EDITORIAL STANDARD</p><h2 className="standards-title">Worth<br />your time.</h2><p>Every release is a reason<br />to trust the next one.</p></div>
+            <div className="token-intro"><p className="network-label">04 / OUR EDITORIAL STANDARD</p><h2 className="standards-title">One home.<br />A higher bar.</h2><p>Exceptional entertainment.<br />However much AI it takes.</p></div>
             <div className="token-rows">
               {[
-                { title: "Story comes first", body: "A clear point of view, compelling characters, and something to feel. The technology serves the story." },
+                { title: "Story comes first", body: "Fully generated or made with a little AI assistance: we look for compelling characters, a distinct point of view, and stories that make you feel something." },
                 { title: "Craft in every frame", body: "Direction, performance, editing, sound, and visual continuity. We look at the complete experience." },
-                { title: "A lineup with intention", body: "Original productions and carefully selected independent work, brought together by a consistent editorial vision." },
+                { title: "A lineup with intention", body: "Find original productions and selected independent shows together in one curated lineup. Less searching across scattered accounts. More finding something worth following." },
                 { title: "An audience with a voice", body: "Community favorites and viewer feedback help us discover talent. The network remains responsible for what it commissions and airs." },
               ].map((item, i) => <article key={item.title}><span className="token-index">0{i + 1}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></article>)}
             </div>
           </div>
         </section>
 
+        <section id="discovery" className="network-wrap network-section discovery-section">
+          <div className="section-index"><span>05 / FROM THE FEED TO YOUR NEXT FAVORITE</span></div>
+          <div className="section-heading"><h2>A moment hooks you.<br /><span>A world brings you back.</span></h2><p className="network-copy">Great entertainment can start with a short scene. Our plan connects those first encounters to the people and shows behind them.</p></div>
+          <div className="discovery-path">
+            {[
+              { number: "01", title: "Find it in the feed.", body: "A scene, a character, a moment worth sharing. Previews introduce the show wherever you’re already watching." },
+              { number: "02", title: "Follow it here.", body: "Explore the premise, meet the producer, and follow the journey from preview to production in one place." },
+              { number: "03", title: "Come back for the show.", body: "Selected projects move into development. Premieres and new episodes give the first spark somewhere to go." },
+            ].map((step) => <article key={step.number}><span className="network-label">{step.number}</span><h3>{step.title}</h3><p>{step.body}</p></article>)}
+          </div>
+          <p className="discovery-note">Audience response and planned $SWIM holder voting inform selection alongside story, craft, and production feasibility.</p>
+        </section>
+
         <section id="roadmap" className="network-wrap network-section">
-          <div className="section-index"><span>05 / BUILDING THE NETWORK</span></div>
+          <div className="section-index"><span>06 / BUILDING THE NETWORK</span></div>
           <div className="section-heading"><h2>Building toward<br /><span>something worth watching.</span></h2><p className="network-copy">Producer development and original programming are at the heart of the plan, from the beginning.</p></div>
           <div className="schedule">
             {[

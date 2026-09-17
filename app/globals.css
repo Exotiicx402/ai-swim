@@ -352,3 +352,54 @@ body { background: #000; }
 .token-intro > p.token-description { font-size: 15px; line-height: 1.75; letter-spacing: 0; color: #b4aaaf; max-width: 390px; }
 .token-cta { margin-top: 28px; }
 .token-status { margin-top: 42px; padding-top: 22px; border-top: 1px solid #393034; color: #aaa09f; font-size: 11px; line-height: 1.8; }
+
+/* A dimensional token with user-controlled motion and no rendering dependency. */
+.token-utility-section { background: radial-gradient(ellipse at 20% 35%, #351a2d 0, #151013 43%, #0c0b0c 80%); }
+.token-utility-section .token-layout { align-items: center; }
+.token-utility-section .token-intro h2 { margin-top: 18px; font-size: 68px; }
+.swim-coin-display { width: 100%; max-width: 400px; margin-block: 12px 20px; }
+.swim-coin-stage { --coin-x: -10deg; --coin-y: -18deg; height: 330px; display: grid; place-items: center; perspective: 950px; position: relative; }
+.swim-coin-stage::after { content: ''; position: absolute; bottom: 6px; width: 65%; height: 22px; background: #0008; border-radius: 50%; filter: blur(12px); pointer-events: none; }
+.swim-coin-control { position: relative; width: 270px; height: 270px; border-radius: 50%; background: transparent; border: 0; padding: 0; cursor: pointer; perspective: 950px; transform: rotateX(var(--coin-x)) rotateY(var(--coin-y)); transform-style: preserve-3d; transition: transform 180ms ease-out; -webkit-tap-highlight-color: transparent; }
+.swim-coin { display: block; position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateY(0deg); transition: transform 850ms cubic-bezier(.22,.68,.22,1); }
+.swim-coin.is-flipped { transform: rotateY(180deg); }
+.swim-coin-edge { position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(#9c657f 0deg 2deg, #e9becd 2deg 3deg, #634556 3deg 5deg); border: 1px solid #d8aabd; }
+.swim-coin-face { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 5px solid #e9ccd7; border-radius: 50%; backface-visibility: hidden; color: #301426; background: conic-gradient(from 35deg, #eedbe4, #ad7b96 14%, #ffe8ef 28%, #b581a1 42%, #f5d4e4 55%, #927289 72%, #fceef3 87%, #eedbe4); box-shadow: inset 0 0 0 2px #664b5a, inset 0 0 0 9px #f1ccdb, inset 0 0 0 10px #8d6278; text-shadow: 0 1px #fff8; }
+.swim-coin-face::after { content: ''; position: absolute; inset: 17px; border-radius: 50%; border: 1px dashed #63415780; pointer-events: none; }
+.swim-coin-front { transform: translateZ(7px); }
+.swim-coin-back { transform: rotateY(180deg) translateZ(7px); }
+.coin-inscription { font-family: var(--font-geist-mono), monospace; font-size: 7px; letter-spacing: .12em; font-weight: 600; }
+.coin-emblem { font-family: 'Helvetica Neue', sans-serif; font-size: 110px; line-height: 1.1; letter-spacing: -.1em; font-weight: 800; padding-right: 10px; text-shadow: 1px 2px 0 #fce4f1, -1px -1px 0 #734c64; }
+.coin-wordmark { font-size: 16px; font-weight: 700; letter-spacing: .14em; margin-block: 0 17px; }
+.coin-reverse-mark { font-size: 43px; font-weight: 800; letter-spacing: -.06em; margin-block: 32px; }
+.swim-coin-back .coin-wordmark { font-size: 9px; }
+.coin-interaction-hint { display: flex; justify-content: center; align-items: center; gap: 8px; color: #a58b9b; font-size: 10px; margin-top: 8px; }
+.utility-cards { display: grid; gap: 12px; }
+.utility-cards article, .utility-cards article:first-child, .utility-cards article:last-child { padding: 25px; border: 1px solid #44303b; border-radius: 18px; background: #ffffff03; transition: background 220ms ease, border-color 220ms ease; }
+.utility-cards article:hover { background: #ff85bd09; border-color: #956b82; }
+.utility-cards .token-index { border: 1px solid #775468; border-radius: 50%; width: 29px; height: 29px; display: grid; place-items: center; padding: 0; flex-shrink: 0; margin-top: 2px; }
+.discovery-section { padding-top: 70px; }
+.discovery-path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #5b4e55; }
+.discovery-path article { padding: 28px 28px 0 0; }
+.discovery-path .network-label { color: #ff85bd; }
+.discovery-path h3 { font-size: 25px; margin-top: 26px; }
+.discovery-path p { font-size: 14px; line-height: 1.8; color: #a3a39e; margin-top: 14px; }
+.discovery-note { font-size: 12px; line-height: 1.8; color: #9a838f; max-width: 650px; margin-top: 36px; }
+@media (max-width: 900px) {
+  .swim-coin-control { width: 240px; height: 240px; }
+  .swim-coin-stage { height: 295px; }
+  .coin-emblem { font-size: 95px; }
+  .coin-inscription { font-size: 6px; }
+  .utility-cards article, .utility-cards article:first-child, .utility-cards article:last-child { gap: 15px; padding: 20px; }
+}
+@media (max-width: 640px) {
+  .swim-coin-display { margin-inline: auto; }
+  .token-utility-section .token-intro h2 { font-size: 60px; }
+  .discovery-path { grid-template-columns: 1fr; }
+  .discovery-path article { padding: 25px 0; border-bottom: 1px solid #30302b; }
+  .discovery-path h3 { margin-top: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .swim-coin-control { transform: none; }
+  .swim-coin, .swim-coin-control, .utility-cards article { transition: none; }
+}
