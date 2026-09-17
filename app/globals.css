@@ -344,3 +344,12 @@ body { background: #000; }
   .site-shell, .site-shell *, .site-shell *::before, .site-shell *::after { animation: none !important; transition: none !important; }
   .site-shell .network-button:hover, .site-shell .network-button:hover > span { transform: none; }
 }
+
+
+.token-intro .standards-title { font-size: clamp(54px, 6.5vw, 88px); letter-spacing: -.055em; }
+.community-section { border-top: 1px solid #30302b; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; padding-block: 38px 48px; }
+.community-section .network-label { color: #92928b; }
+.community-section h3 { font-size: 26px; margin-top: 12px; }
+.community-section > p { font-size: 14px; line-height: 1.8; color: #a3a39e; }
+@media (max-width: 900px) { .community-section { gap: 36px; } }
+@media (max-width: 640px) { .community-section { grid-template-columns: 1fr; gap: 20px; } }
