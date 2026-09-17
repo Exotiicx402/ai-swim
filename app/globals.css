@@ -347,9 +347,8 @@ body { background: #000; }
 
 
 .token-intro .standards-title { font-size: clamp(54px, 6.5vw, 88px); letter-spacing: -.055em; }
-.community-section { border-top: 1px solid #30302b; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; padding-block: 38px 48px; }
-.community-section .network-label { color: #92928b; }
-.community-section h3 { font-size: 26px; margin-top: 12px; }
-.community-section > p { font-size: 14px; line-height: 1.8; color: #a3a39e; }
-@media (max-width: 900px) { .community-section { gap: 36px; } }
-@media (max-width: 640px) { .community-section { grid-template-columns: 1fr; gap: 20px; } }
+/* Token utility shares the network's rounded controls and responsive layout. */
+.token-utility-section { background: #181214; }
+.token-intro > p.token-description { font-size: 15px; line-height: 1.75; letter-spacing: 0; color: #b4aaaf; max-width: 390px; }
+.token-cta { margin-top: 28px; }
+.token-status { margin-top: 42px; padding-top: 22px; border-top: 1px solid #393034; color: #aaa09f; font-size: 11px; line-height: 1.8; }

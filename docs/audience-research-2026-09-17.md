@@ -2,6 +2,10 @@
 
 Research date: September 17, 2026. Desk research, not a commissioned global survey. No audience recruitment, outreach, paid research, or website changes were performed.
 
+## Project constraint
+
+ai swim remains a Web3 ICO project. $SWIM utility must stay prominent in navigation and a dedicated section: planned audience curation, creator rewards, submission access, and community proposals. Viewer research informs the programming experience alongside this requirement. Specific tokenomics and launch terms remain in development.
+
 ## Decision
 
 Launch a small, curated slate of clearly labelled show previews and learn which characters and premises earn voluntary attention and repeat visits. Treat this as a hypothesis to validate, not proven demand for a preview-only network. Preview popularity does not establish episode retention or subscription demand.
