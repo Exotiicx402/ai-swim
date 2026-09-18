@@ -56,7 +56,7 @@ export default function Home() {
         /></div>
         <div className="launch-hero-content">
           <p className="network-label"><span className="signal-dot" />THE NETWORK STARTS WITH $SWIM</p>
-          <h1>Independent entertainment.<br /><span>Built from the beginning.</span></h1>
+          <h1>Independent entertainment.</h1>
           <p className="launch-hero-copy">A Web3 network for original shows and the people who make them. Token first. Producer development next. A home for exceptional AI-assisted entertainment to follow.</p>
           <div className="launch-hero-actions"><a href="#waitlist" className="network-button">Get launch updates <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a><a href="#roadmap" className="launch-text-link">See what comes next <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
           <p className="launch-hero-note">PRE-LAUNCH · PROGRAMMING IN DEVELOPMENT</p>

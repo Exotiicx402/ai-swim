@@ -21,7 +21,7 @@ export default function HolderAccess() {
         </div>
         <div className="access-coin"><SwimCoin /><p className="holder-kicker">$SWIM / A VOICE IN WHAT COMES NEXT</p></div>
       </main>
-      <footer className="access-footer"><span>Independent entertainment. Built from the beginning.</span><Link href="/#waitlist">Get launch updates ↗</Link></footer>
+      <footer className="access-footer"><span>Independent entertainment.</span><Link href="/#waitlist">Get launch updates ↗</Link></footer>
     </div>
   );
 }
