@@ -122,3 +122,21 @@
 .holder-app button:disabled { cursor: wait; opacity: .6; }
 .holder-session-bar { display: flex; gap: 18px; justify-content: flex-end; align-items: center; padding: 10px 25px; background: #30212c; font-size: 11px; }
 .holder-session-bar button { text-decoration: underline; }
+
+/* Carry the network's glass accents into the member workspace. */
+.holder-app { background: radial-gradient(ellipse at 80% 0%, #4c283021, transparent 55%), #0c0b0d; }
+.holder-topbar { background: #110e12e8; -webkit-backdrop-filter: blur(20px) saturate(130%); backdrop-filter: blur(20px) saturate(130%); border-color: #ffffff12; }
+.holder-access-pill, .holder-sidebar nav button[aria-current] {
+  background: linear-gradient(145deg, #e3b9d121, #ffffff05); border-color: #ffffff26;
+  box-shadow: inset 0 1px 0 #ffffff1c, 0 3px 12px #0002;
+}
+.holder-sidebar nav button { border-radius: 14px; }
+.holder-panel { border-color: #ffffff1c; border-radius: 22px; background: linear-gradient(135deg, #ffffff08, #ffffff01 55%), #141115; box-shadow: var(--glass-shadow); }
+.holder-feature { border-radius: 24px; border-color: #dfb7ce55; box-shadow: inset 0 1px 0 #ffffff30, 0 16px 40px #0003; }
+.holder-feature::after { content: ""; position: absolute; z-index: 2; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 1px 0 #ffffff30, inset 1px 0 0 #ffffff0a; background: linear-gradient(140deg, #ffffff06, transparent 40%); }
+.holder-button { border-color: #ffffff66; background: linear-gradient(155deg, #fffafc, #e4dfe3); box-shadow: inset 0 1px 0 #fff, inset 0 -2px 3px #b8a6b329, 0 4px 14px #0002; }
+.holder-button:hover { background: linear-gradient(155deg, #fff4fa, #e7bdd4); }
+.holder-update-strip, .access-status { border-radius: 22px; border-color: #ffffff1c; background: linear-gradient(135deg, #ffffff08, #ffffff02), #1b151c; box-shadow: inset 0 1px 0 #ffffff12; }
+.holder-preview-banner { background: #221a2080; border-color: #ffffff0e; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .holder-topbar { background: #110e12; } }
+@media (prefers-reduced-transparency: reduce) { .holder-topbar { background: #110e12; -webkit-backdrop-filter: none; backdrop-filter: none; } }
