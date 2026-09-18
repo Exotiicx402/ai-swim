@@ -15,7 +15,6 @@ const lineup = [
   { number: "02", cover: "/covers/show-02.jpg" },
   { number: "03", cover: "/covers/show-03.jpg" },
   { number: "04", cover: "/covers/show-04.jpg" },
-  { number: "05", cover: "/covers/show-05.jpg" },
 ];
 
 export default function Home() {
