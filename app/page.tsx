@@ -43,8 +43,8 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="launch-hero relative flex w-full flex-col items-center justify-center overflow-hidden bg-black">
-        <div className="launch-hero-art" aria-hidden="true"><AnimatedGrid
+      <section id="top" className="brand-hero relative flex w-full items-center justify-center overflow-hidden bg-black" aria-label="ai swim">
+        <div className="brand-hero-art" aria-hidden="true"><AnimatedGrid
           startColor={[255, 0, 0]}
           endColor={[255, 0, 255]}
           animationStartColor={[255, 0, 0]}
@@ -54,16 +54,20 @@ export default function Home() {
           cellSize="6rem"
           animationDuration="2s"
         /></div>
+        <h1 className="brand-hero-mark" style={displayFont}>[ai swim]</h1>
+      </section>
+
+      <main className="network-page">
+      <section className="launch-hero" aria-labelledby="network-intro-heading">
         <div className="launch-hero-content">
           <p className="network-label"><span className="signal-dot" />[ai swim] / A WEB3 ENTERTAINMENT NETWORK</p>
-          <h1>Independent entertainment.</h1>
+          <h2 id="network-intro-heading">Independent entertainment.</h2>
           <p className="launch-hero-copy">Original shows. Independent voices. A community with a part to play. Discover the world of ai swim and the people behind it.</p>
           <div className="launch-hero-actions"><a href="/dashboard" className="network-button">Enter the holder room <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a><a href="#roadmap" className="launch-text-link">Explore the network <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
           <p className="launch-hero-note">SHOWS · PRODUCERS · COMMUNITY</p>
         </div>
       </section>
 
-      <main className="network-page">
         <div className="launch-sequence" aria-label="The network"><div className="network-wrap"><span><b>01</b> Discover original worlds</span><span><b>02</b> Support independent voices</span><span><b>03</b> Be part of the community</span></div></div>
         <section id="waitlist" className="network-wrap signup-section">
           <div>
