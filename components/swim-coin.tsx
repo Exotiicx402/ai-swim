@@ -43,7 +43,6 @@ export function SwimCoin() {
               <span className="coin-inscription">THE NETWORK TOKEN</span>
               <span className="coin-emblem">[s]</span>
               <span className="coin-wordmark">$SWIM</span>
-              <span className="coin-inscription">ORIGINAL WORLDS · SHARED CULTURE</span>
             </span>
             <span className="swim-coin-face swim-coin-back">
               <span className="coin-inscription">A VOICE IN WHAT COMES NEXT</span>
