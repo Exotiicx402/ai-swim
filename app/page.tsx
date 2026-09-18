@@ -1,3 +1,4 @@
+import { ShowTeasers } from "@/components/show-teasers";
 import { SwimCoin } from "@/components/swim-coin";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedGrid } from "@/components/ui/animated-grid";
@@ -55,16 +56,19 @@ export default function Home() {
       </section>
 
       <main className="network-page compact-landing">
-        <section id="thesis" className="network-wrap compact-intro" aria-labelledby="network-intro-heading">
+        <section id="thesis" className="showcase-section" aria-labelledby="network-intro-heading">
+          <div className="network-wrap compact-intro">
           <div>
             <p className="network-label"><span className="signal-dot" /> A WEB3 ENTERTAINMENT NETWORK</p>
             <h2 id="network-intro-heading">Good shows.<br /><span>Less noise.</span></h2>
           </div>
           <div className="compact-intro-copy">
             <p>Independent shows and films made with AI. Selected for the story, the craft, and the feeling that you need to see what happens next.</p>
-            <p>Discover a pilot preview. Follow the shows you love. We help selected producers turn promising ideas into original productions.</p>
+            <p>Get a first look here. Unlock trailers and pilots in the holder room with $SWIM. Follow the shows you love. We help selected producers turn promising ideas into original productions.</p>
             <a href="/dashboard" className="network-button">Explore the network <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a>
           </div>
+          </div>
+          <ShowTeasers />
         </section>
 
         <section id="swim" className="token-section token-utility-section" aria-labelledby="swim-heading">

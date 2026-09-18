@@ -534,3 +534,35 @@ body { background: #000; }
   .compact-backing { display: grid; gap: 16px; margin-top: 8px; }
   .compact-landing .signup-section { gap: 24px; }
 }
+
+/* Public artwork only; playback lives behind the server-verified holder route. */
+.showcase-section { padding-bottom: 40px; }
+.showcase-section .compact-intro { padding-bottom: 32px; }
+.teaser-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.teaser-caption p { display: flex; align-items: center; gap: 9px; font-size: 11px; color: #afa3ab; }
+.teaser-caption p svg { flex-shrink: 0; color: #ec9fc7; }
+.teaser-caption button { display: grid; place-items: center; flex-shrink: 0; width: 32px; height: 32px; border: 1px solid #ffffff26; border-radius: 50%; background: #ffffff09; cursor: pointer; }
+.teaser-window { overflow: hidden; }
+.teaser-track { display: flex; width: max-content; animation: teaser-drift 45s linear infinite; }
+.teaser-group { display: flex; gap: 16px; padding-right: 16px; }
+.teaser-card { position: relative; display: block; width: 260px; height: 310px; flex-shrink: 0; overflow: hidden; border-radius: 16px; border: 1px solid #ffffff22; background: #211821; }
+.teaser-card img { object-fit: cover; object-position: top; transition: transform 300ms ease; }
+.teaser-card::after { content: ''; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, #000a); pointer-events: none; }
+.teaser-card:hover img { transform: scale(1.025); }
+.teaser-lock { position: absolute; z-index: 1; bottom: 14px; left: 14px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid #ffffff30; border-radius: 999px; padding: 7px 10px; background: #151015b8; backdrop-filter: blur(12px); font: 8px/1.3 var(--font-geist-mono), monospace; letter-spacing: .06em; }
+.teaser-track.is-paused, .teaser-window:hover .teaser-track, .teaser-window:focus-within .teaser-track { animation-play-state: paused; }
+.teaser-window:focus-within { overflow-x: auto; }
+@keyframes teaser-drift { to { transform: translateX(-50%); } }
+@media (max-width: 700px) {
+  .teaser-card { width: 210px; height: 255px; }
+  .teaser-group { gap: 12px; padding-right: 12px; }
+  .teaser-caption p { max-width: 260px; line-height: 1.6; }
+  .showcase-section { padding-bottom: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .teaser-track { animation: none; }
+  .teaser-window { overflow-x: auto; }
+  .teaser-group[aria-hidden="true"] { display: none; }
+  .teaser-card img { transition: none; }
+  .teaser-caption button { display: none; }
+}
