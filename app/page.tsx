@@ -62,9 +62,9 @@ export default function Home() {
         <div className="launch-hero-content">
           <p className="network-label"><span className="signal-dot" />[ai swim] / A WEB3 ENTERTAINMENT NETWORK</p>
           <h2 id="network-intro-heading">Independent entertainment.</h2>
-          <p className="launch-hero-copy">Original shows. Independent voices. A community with a part to play. Discover the world of ai swim and the people behind it.</p>
+          <p className="launch-hero-copy">Good stories. Real craft. Shows worth your time. ai swim puts quality first, bringing a considered selection of AI-assisted entertainment into one place.</p>
           <div className="launch-hero-actions"><a href="/dashboard" className="network-button">Enter the holder room <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a><a href="#roadmap" className="launch-text-link">Explore the network <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
-          <p className="launch-hero-note">SHOWS · PRODUCERS · COMMUNITY</p>
+          <p className="launch-hero-note">STORY · CRAFT · COMMUNITY</p>
         </div>
       </section>
 
@@ -72,7 +72,7 @@ export default function Home() {
         <section id="waitlist" className="network-wrap signup-section">
           <div>
             <h2>Stay in the loop.</h2>
-            <p className="network-copy">Show announcements, producer stories, creative opportunities, and network news. Straight to your inbox.</p>
+            <p className="network-copy">Show announcements, new previews, creative opportunities, and network news. Straight to your inbox.</p>
           </div>
           <div className="signup-form">
             <WaitlistForm />
@@ -110,8 +110,8 @@ export default function Home() {
             </div>
             <div className="token-rows utility-cards">
               {[
-                { title: "Your holder room", body: "A space for network updates, producer stories, and opportunities. Connect your eligible wallet when sign-in is available, or take a look as a guest." },
-                { title: "Get closer to the shows", body: "Explore previews, meet the producers, and follow the stories that catch your attention. Find the latest releases and announcements in Shows." },
+                { title: "Your holder room", body: "A space for show discovery, network updates, and opportunities. Connect your eligible wallet when sign-in is available, or take a look as a guest." },
+                { title: "Find something worth watching", body: "Explore a curated selection of previews with compelling stories, memorable characters, and considered craft. Find show announcements in the dashboard." },
                 { title: "Find your next opportunity", body: "Bring your skills to a creative brief or explore a producer commission. Each open opportunity sets out the work, eligibility, and payment terms." },
                 { title: "Take part in the community", body: "Find lineup votes and proposal rounds in the community section. Each round lists its participation rules and availability." },
               ].map((item, i) => <article key={item.title}><span className="token-index">0{i + 1}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></article>)}
@@ -153,7 +153,7 @@ export default function Home() {
           <div className="discovery-path">
             {[
               { number: "01", title: "Find it in the feed.", body: "A scene, a character, a moment worth sharing. Previews introduce the show wherever you’re already watching." },
-              { number: "02", title: "Follow it here.", body: "Explore the premise, meet the producer, and follow the journey from preview to production in one place." },
+              { number: "02", title: "Follow it here.", body: "Watch the preview, get a feel for the story, and find out whether it’s your kind of show. Follow release updates in one place." },
               { number: "03", title: "Come back for the show.", body: "As selected projects reach release, premieres and new episodes give the first spark somewhere to go. Subscribers get a reason to return." },
             ].map((step) => <article key={step.number}><span className="network-label">{step.number}</span><h3>{step.title}</h3><p>{step.body}</p></article>)}
           </div>
