@@ -3,7 +3,7 @@ import "./dashboard.css";
 
 export const metadata: Metadata = {
   title: "Holder dashboard | ai swim",
-  description: "Follow the development of the ai swim network. Holder access is in development.",
+  description: "Your space for ai swim network updates, shows, community, and creative opportunities.",
   robots: { index: false, follow: false },
 };
 

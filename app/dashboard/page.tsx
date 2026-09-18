@@ -13,15 +13,15 @@ export default function HolderAccess() {
         <div>
           <span className="holder-badge"><LockKeyhole size={13} /> SOLANA / $SWIM HOLDER ACCESS</span>
           <h1>Your place<br />in the network.</h1>
-          <p className="access-intro">Follow the first shows from idea to production. Get closer to the producers, explore opportunities, and see what’s coming next.</p>
-          <div className="access-status"><ShieldCheck size={22} /><div><h2>{config.configured ? "Verify your SWIM holdings." : "Verification opens with the token."}</h2><p>{config.configured ? "Connect the Solana wallet holding SWIM. We verify wallet ownership and check its current token balance before opening the dashboard." : "SWIM is launching on pump.fun. Holder access opens once the Solana mint and holding requirement are confirmed and verification is enabled."}</p></div></div>
+          <p className="access-intro">Follow shows from idea to production. Get closer to the producers, explore opportunities, and see what’s coming next.</p>
+          <div className="access-status"><ShieldCheck size={22} /><div><h2>{config.configured ? "Verify your SWIM holdings." : "Holder sign-in is unavailable."}</h2><p>{config.configured ? "Connect the Solana wallet holding SWIM. We verify wallet ownership and check its current token balance before opening the dashboard." : "Please check back to sign in. You can explore the dashboard as a guest."}</p></div></div>
           {config.configured && <WalletAccess url={process.env.SUPABASE_URL!} anonKey={process.env.SUPABASE_ANON_KEY!} />}
-          <Link href="/dashboard/preview" className="holder-button">Explore the dashboard preview <ArrowUpRight size={16} /></Link>
-          <p className="holder-muted access-note">Public preview only. No wallet connection, token purchase, or signature required.</p>
+          <Link href="/dashboard/preview" className="holder-button">Explore as a guest <ArrowUpRight size={16} /></Link>
+          <p className="holder-muted access-note">Guest access does not require a wallet.</p>
         </div>
         <div className="access-coin"><SwimCoin /><p className="holder-kicker">$SWIM / A VOICE IN WHAT COMES NEXT</p></div>
       </main>
-      <footer className="access-footer"><span>Independent entertainment.</span><Link href="/#waitlist">Get launch updates ↗</Link></footer>
+      <footer className="access-footer"><span>Independent entertainment.</span><Link href="/#waitlist">Get network updates ↗</Link></footer>
     </div>
   );
 }

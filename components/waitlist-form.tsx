@@ -33,7 +33,7 @@ export function WaitlistForm() {
           className="network-button"
           disabled={pending || done}
         >
-          {done ? "You're in" : pending ? "Joining…" : "Join waitlist"}
+          {done ? "You're in" : pending ? "Signing up…" : "Get updates"}
           {done ? (
             <Check aria-hidden="true" className="icon-arrow" />
           ) : (
