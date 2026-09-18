@@ -48,7 +48,7 @@ export function SwimCoin() {
             <span className="swim-coin-face swim-coin-back">
               <span className="coin-inscription">A VOICE IN WHAT COMES NEXT</span>
               <span className="coin-reverse-mark">[ai swim]</span>
-              <span className="coin-wordmark">DISCOVER. CHAMPION. CREATE.</span>
+              <span className="coin-wordmark">DISCOVER. CREATE.</span>
               <span className="coin-inscription">INDEPENDENT ENTERTAINMENT</span>
             </span>
           </span>
