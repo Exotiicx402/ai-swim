@@ -30,6 +30,9 @@ export default function Home() {
             <a href="#roadmap" className="transition-colors hover:text-white">
               Roadmap
             </a>
+            <a href="/dashboard" className="transition-colors hover:text-white">
+              Holder room
+            </a>
           </nav>
           <a
             href="#waitlist"
@@ -170,7 +173,7 @@ export default function Home() {
         <footer className="network-footer">
           <div className="network-wrap">
             <div className="footer-invite"><h2>Be part of<br />what comes next.</h2><a href="#waitlist" className="network-button">Get on the list <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
-            <div className="footer-rule"><a href="#top" className="footer-brand" style={displayFont}>[ai swim]</a><nav aria-label="Footer"><a href="#thesis">The network</a><a href="#how">Get involved</a><a href="#swim">$SWIM</a></nav></div>
+            <div className="footer-rule"><a href="#top" className="footer-brand" style={displayFont}>[ai swim]</a><nav aria-label="Footer"><a href="#thesis">The network</a><a href="#how">Get involved</a><a href="#swim">$SWIM</a><a href="/dashboard">Holder room</a></nav></div>
             <p className="footer-disclaimer">ai swim is in development. The ICO, token features, shows, subscriptions, and contribution programs described here are planned. Joining the update list does not purchase tokens, reserve paid work, or include a subscription. Earnings require qualifying work or referrals under published terms; token ownership alone does not entitle holders to payments or network revenue.</p>
           </div>
         </footer>
