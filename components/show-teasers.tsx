@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useVisibleAnimation } from "@/hooks/use-visible-animation";
 import { LockKeyhole, Pause, Play } from "lucide-react";
 
 // Only public promotional artwork belongs here. Never add trailer or pilot URLs.
@@ -14,9 +15,10 @@ const teasers = [
 ];
 
 export function ShowTeasers() {
+  const animationRef = useVisibleAnimation();
   const [paused, setPaused] = useState(false);
   return (
-    <div className="show-teasers">
+    <div ref={animationRef} className="show-teasers">
       <div className="network-wrap teaser-caption">
         <p><LockKeyhole size={13} aria-hidden="true" /> A first look here. Trailers &amp; pilots for $SWIM holders.</p>
         <button type="button" aria-label={paused ? "Resume show banner" : "Pause show banner"} aria-pressed={paused} onClick={() => setPaused(!paused)}>{paused ? <Play size={14} /> : <Pause size={14} />}</button>

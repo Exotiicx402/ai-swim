@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useMemo } from "react"
+import { useVisibleAnimation } from "@/hooks/use-visible-animation"
 
 interface AnimatedGridProps {
   rows?: number
@@ -25,6 +26,7 @@ export function AnimatedGrid({
   animationStartColor = [105, 210, 231],
   animationEndColor = [250, 105, 0],
 }: AnimatedGridProps) {
+  const animationRef = useVisibleAnimation()
   const totalItems = rows * cols
 
   // Generate grid items with calculated positions
@@ -58,43 +60,48 @@ export function AnimatedGrid({
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div ref={animationRef} className="animated-grid-root min-h-screen flex items-center justify-center p-4">
       <div
         className="grid gap-0"
         style={{
           gridTemplate: `repeat(${rows}, ${cellSize}) / repeat(${cols}, ${cellSize})`,
         }}
       >
-        {gridItems.map(({ index, row, col, delay, k }) => {
+        {gridItems.map(({ index, delay, k }) => {
           const cellBackgroundColor = interpolateColor(startColor, endColor, k)
           const animationColor1 = interpolateColor(animationStartColor, animationEndColor, k)
 
           return (
-            <div
-              key={index}
-              className="relative"
-              style={
-                {
-                  backgroundColor: cellBackgroundColor,
-                  animation: `gridAnimation ${animationDuration} ease-in ${delay}s infinite alternate`,
-                  "--animation-color": animationColor1,
-                } as React.CSSProperties
-              }
-            />
+            <div key={index} className="grid-cell">
+              <div
+                className="grid-shape"
+                style={
+                  {
+                    background: `linear-gradient(${animationColor1}, ${cellBackgroundColor})`,
+                    animationDuration,
+                    animationDelay: `${delay}s`,
+                  } as React.CSSProperties
+                }
+              />
+            </div>
           )
         })}
       </div>
 
       <style jsx>{`
+        .animated-grid-root { contain: paint; }
+        .grid-cell { overflow: hidden; contain: paint; }
+        .grid-shape {
+          width: 100%; height: 100%; border-radius: 50%;
+          animation-name: gridAnimation;
+          animation-timing-function: ease-in;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+          animation-play-state: var(--ambient-play-state, paused);
+        }
         @keyframes gridAnimation {
-          0% {
-            border-radius: 50%;
-            background-color: var(--animation-color);
-          }
-          100% {
-            border-radius: 0%;
-            background-color: inherit;
-          }
+          from { transform: scale(1); }
+          to { transform: scale(1.42); }
         }
       `}</style>
     </div>
