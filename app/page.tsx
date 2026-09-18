@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SwimCoin } from "@/components/swim-coin";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedGrid } from "@/components/ui/animated-grid";
@@ -10,13 +9,6 @@ const displayFont = {
   fontStretch: "condensed" as const,
 };
 
-const lineup = [
-  { number: "01", cover: "/covers/show-01.jpg" },
-  { number: "02", cover: "/covers/show-02.jpg" },
-  { number: "03", cover: "/covers/show-03.jpg" },
-  { number: "04", cover: "/covers/show-04.jpg" },
-];
-
 export default function Home() {
   return (
     <div className="site-shell bg-black text-white">
@@ -26,14 +18,11 @@ export default function Home() {
             [ai swim]
           </span>
           <nav className="hidden gap-8 text-sm font-medium text-white/70 lg:flex">
-            <a href="#lineup" className="transition-colors hover:text-white">
-              Lineup
-            </a>
             <a href="#thesis" className="transition-colors hover:text-white">
               The network
             </a>
             <a href="#how" className="transition-colors hover:text-white">
-              For producers
+              Get involved
             </a>
             <a href="#swim" className="transition-colors hover:text-white">
               $SWIM utility
@@ -51,8 +40,8 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-black">
-        <AnimatedGrid
+      <section id="top" className="launch-hero relative flex w-full flex-col items-center justify-center overflow-hidden bg-black">
+        <div className="launch-hero-art" aria-hidden="true"><AnimatedGrid
           startColor={[255, 0, 0]}
           endColor={[255, 0, 255]}
           animationStartColor={[255, 0, 0]}
@@ -61,123 +50,104 @@ export default function Home() {
           cols={15}
           cellSize="6rem"
           animationDuration="2s"
-        />
-        <span
-          className="pointer-events-none absolute z-10 text-center text-7xl font-bold leading-none tracking-tighter text-white whitespace-pre-wrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
-          style={displayFont}
-        >
-          [ai swim]
-        </span>
-        <p className="pointer-events-none absolute bottom-16 z-10 max-w-md px-6 text-center text-sm text-white/60">
-          Independent voices. Original worlds. A Web3 network.
-        </p>
-      </section>
-
-      <section id="lineup" className="overflow-hidden border-b border-white/10 py-16">
-        <div className="lineup-track flex w-max gap-4">
-          {[...lineup, ...lineup].map((show, i) => (
-            <div
-              key={`${show.number}-${i}`}
-              className="group relative aspect-[2/3] w-[220px] shrink-0 overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(255,51,153,0.25)] sm:w-[260px]"
-            >
-              <Image
-                src={show.cover}
-                alt=""
-                fill
-                sizes="260px"
-                className="object-cover"
-              />
-            </div>
-          ))}
+        /></div>
+        <div className="launch-hero-content">
+          <p className="network-label"><span className="signal-dot" />THE NETWORK STARTS WITH $SWIM</p>
+          <h1>Independent entertainment.<br /><span>Built from the beginning.</span></h1>
+          <p className="launch-hero-copy">A Web3 network for original shows and the people who make them. Token first. Producer development next. A home for exceptional AI-assisted entertainment to follow.</p>
+          <div className="launch-hero-actions"><a href="#waitlist" className="network-button">Get launch updates <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a><a href="#roadmap" className="launch-text-link">See what comes next <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
+          <p className="launch-hero-note">PRE-LAUNCH · PROGRAMMING IN DEVELOPMENT</p>
         </div>
       </section>
 
       <main className="network-page">
+        <div className="launch-sequence" aria-label="Planned launch sequence"><div className="network-wrap"><span><b>01</b> Launch $SWIM</span><span><b>02</b> Develop the first shows</span><span><b>03</b> Open subscriptions</span></div></div>
         <section id="waitlist" className="network-wrap signup-section">
           <div>
-            <h2>Stay tuned.</h2>
-            <p className="network-copy">Discover your next favorite show before it becomes one.<br />Follow the previews. Meet the producers. Be part of what’s next.</p>
+            <h2>Be here for the beginning.</h2>
+            <p className="network-copy">Join the founding community’s update list. Follow the token launch, the first producer opportunities, and the road to our first previews.</p>
           </div>
           <div className="signup-form">
             <WaitlistForm />
-            <p className="network-note">Show previews, producer opportunities, and $SWIM ICO updates.</p>
+            <p className="network-note">Free email updates. No token purchase or subscription required.</p>
           </div>
         </section>
 
         <section id="thesis" className="manifesto-section">
           <div className="network-wrap">
             <div className="section-index"><span>01 / THE NETWORK</span></div>
-            <h2>The freedom to create.<br /><span>The backing to be seen.</span></h2>
+            <h2>First, a community.<br /><span>Then, a network worth watching.</span></h2>
             <div className="manifesto-bottom">
               <span className="bracket-mark" aria-hidden="true">[<ArrowUpRight className="icon-arrow" />]</span>
               <div>
-                <p>ai swim is a Web3 entertainment network where independent producers introduce original shows through pilot previews.</p>
-                <p>The community discovers them, $SWIM holders help shape the lineup, and the network develops selected projects into original productions.</p>
+                <p>ai swim is building a Web3 entertainment network for independent shows and films made with the help of AI. We’re starting with the planned $SWIM token launch, before a finished show library.</p>
+                <p>Next, independent producers introduce their ideas through pilot previews. The community discovers them, $SWIM holders help shape the lineup, and the network develops selected projects into original productions.</p>
               </div>
             </div>
             <div className="production-commitment">
-              <div><p className="network-label">NETWORK EARNINGS → ORIGINAL SHOWS</p><h3>We back the people behind the shows.</h3></div>
-              <p>Our model puts a portion of network earnings back into original commissions, in-house productions, and producer development. The ambition is to help promising pilots become enduring series.</p>
+              <div><p className="network-label">CREATIVE FREEDOM + PRODUCTION SUPPORT</p><h3>We back the people behind the shows.</h3></div>
+              <p>Our ambition is to give selected producers funding, tools, collaborators, and distribution while making room for distinctive creative voices. Original commissions and in-house development are part of the network we’re building.</p>
             </div>
-          </div>
-        </section>
-
-        <section id="how" className="network-wrap network-section">
-          <div className="section-index"><span>02 / FOR PRODUCERS</span></div>
-          <div className="section-heading"><h2>Your vision.<br /><span>Room to make it real.</span></h2><p className="network-copy">Independent producers need resources, collaborators, and an audience. We’re building a network that supports distinctive creative voices from the first preview to release.</p></div>
-          <div className="process-grid">
-            {[
-              { number: "01", title: "Develop the vision.", detail: "TALENT & DEVELOPMENT", body: "Bring a distinctive point of view. We aim to give selected producers the creative space and development support to build their own characters, stories, and worlds." },
-              { number: "02", title: "Back the production.", detail: "FUNDING & ORIGINALS", body: "Our model brings funding, production tools, and creative collaborators to selected projects, alongside original commissions and in-house productions." },
-              { number: "03", title: "Build the audience.", detail: "PROGRAMMING & RELEASE", body: "A home on the network, a considered release plan, and previews made to travel through the feed. Help the right viewers find a show and stay for what comes next." },
-            ].map((step) => <article key={step.number} className="process-step"><div className="process-number"><span>{step.number}</span><ArrowUpRight aria-hidden="true" className="icon-arrow" /></div><h3>{step.title}</h3><p>{step.body}</p><span className="network-label">{step.detail}</span></article>)}
           </div>
         </section>
 
         <section id="swim" className="token-section token-utility-section" aria-labelledby="swim-heading">
           <div className="network-wrap token-layout">
             <div className="token-intro">
-              <p className="network-label">03 / THE NETWORK TOKEN</p>
+              <p className="network-label">02 / THE NETWORK TOKEN</p>
               <h2 id="swim-heading">$SWIM</h2>
               <SwimCoin />
-              <p>Discover it early.<br />Help shape what’s next.</p>
-              <p className="token-description">The token connects the community to the network’s next chapter. Our planned ICO introduces $SWIM for audience curation, creator access, rewards, and community proposals.</p>
+              <p>The token comes first.<br />Help shape what follows.</p>
+              <p className="token-description">The planned $SWIM ICO is our first launch milestone. It brings the founding community together ahead of the first shows, with participation features rolling out as the network develops.</p>
               <a href="#waitlist" className="network-button token-cta">Get ICO updates <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a>
             </div>
             <div className="token-rows utility-cards">
               {[
-                { title: "Vote on show previews", body: "Planned holder voting lets the community champion pilot previews and help shape the lineup. Audience support informs the network’s programming and development decisions." },
-                { title: "Support creator rewards", body: "A planned $SWIM rewards pool recognizes creators whose work is selected for the network, helping support the people making the next shows." },
-                { title: "Access the submission queue", body: "Token-based submission access is planned for producers bringing original previews, pilots, and shows to the network for consideration." },
-                { title: "Help shape the network", body: "Planned community proposals give holders a way to contribute ideas for programming, formats, and future network initiatives." },
+                { title: "Know what launches first", body: "Before the ICO, we’ll publish token terms, the intended use of proceeds, and which features will be available at launch. Future utility will be distinguished from day-one access." },
+                { title: "Discover the first previews", body: "Planned holder access to early previews and producer updates as the first slate takes shape. Finished shows are not part of the token-launch offering." },
+                { title: "Help shape the lineup", body: "Once previews are available, planned holder voting will inform programming decisions alongside story quality, production feasibility, and editorial judgment." },
+                { title: "Contribute ideas", body: "Planned community proposals give holders a way to suggest programming and network initiatives. Paid work and referral opportunities have their own eligibility and terms." },
               ].map((item, i) => <article key={item.title}><span className="token-index">0{i + 1}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></article>)}
             </div>
           </div>
-          <p className="network-wrap token-status">IN DEVELOPMENT — ICO timing, tokenomics, eligibility, and utility mechanics will be published before launch.</p>
+          <p className="network-wrap token-status">PRE-LAUNCH — Tokenomics, use of proceeds, eligibility, and launch-day utility are still being defined. The token, viewing subscription, and paid contribution programs serve different purposes.</p>
+        </section>
+
+        <section id="how" className="network-wrap network-section">
+          <div className="section-index"><span>03 / PAID CONTRIBUTION</span></div>
+          <div className="section-heading"><h2>Help build the network.<br /><span>Get paid for what you contribute.</span></h2><p className="network-copy">ai swim is building a home for independent entertainment—and opportunities for the people behind it. Producers can earn through commissioned projects, creative contributors through paid work, and community partners through qualifying subscriber referrals.</p></div>
+          <div className="process-grid">
+            {[
+              { number: "01", title: "Make original shows.", detail: "PRODUCER COMMISSIONS · PLANNED", body: "Introduce a world, a story, and a point of view through a pilot preview. Selected producers can be offered paid development or production commissions with an agreed scope and budget." },
+              { number: "02", title: "Bring your craft.", detail: "CREATIVE WORK · PLANNED", body: "Writing, editing, sound, design, and production. We plan to publish paid briefs as projects are funded, with deliverables and payment terms stated before work begins." },
+              { number: "03", title: "Grow the audience.", detail: "SUBSCRIBER REFERRALS · LATER", body: "When paid subscriptions launch, a planned partner program will offer rewards for qualifying subscriber referrals. Eligibility, attribution, and payment terms will be published before it opens." },
+            ].map((step) => <article key={step.number} className="process-step"><div className="process-number"><span>{step.number}</span><ArrowUpRight aria-hidden="true" className="icon-arrow" /></div><h3>{step.title}</h3><p>{step.body}</p><span className="network-label">{step.detail}</span></article>)}
+          </div>
+          <p className="discovery-note">These are planned earning opportunities, not open jobs or guaranteed income. Each requires an available budget, selection or eligibility, and agreed terms. Holding $SWIM alone does not earn a payment.</p>
         </section>
 
         <section id="standards" className="token-section">
           <div className="network-wrap token-layout">
-            <div className="token-intro"><p className="network-label">04 / OUR EDITORIAL STANDARD</p><h2 className="standards-title">One home.<br />A higher bar.</h2><p>Exceptional entertainment.<br />However much AI it takes.</p></div>
+            <div className="token-intro"><p className="network-label">04 / THE VIEWING EXPERIENCE</p><h2 className="standards-title">Shows worth<br />coming back for.</h2><p>A paid subscription.<br />When the programming is ready.</p></div>
             <div className="token-rows">
               {[
-                { title: "Story comes first", body: "Fully generated or made with a little AI assistance: we look for compelling characters, a distinct point of view, and stories that make you feel something." },
-                { title: "Craft in every frame", body: "Direction, performance, editing, sound, and visual continuity. We look at the complete experience." },
-                { title: "A lineup with intention", body: "Find original productions and selected independent shows together in one curated lineup. Less searching across scattered accounts. More finding something worth following." },
-                { title: "An audience with a voice", body: "Community favorites and viewer feedback help us discover talent. The network remains responsible for what it commissions and airs." },
+                { title: "One curated home", body: "Original shows first, with films to follow. A considered library brings independent entertainment together instead of leaving viewers to search across scattered accounts." },
+                { title: "Quality, however much AI it takes", body: "Fully generated or lightly assisted: story, direction, performance, and craft set the standard. The tools are part of the process; the entertainment has to stand on its own." },
+                { title: "Subscribe when there’s something to watch", body: "Paid viewing comes later, when programming and a release schedule are ready. Pricing, access, and the first slate will be announced before subscriptions open." },
+                { title: "Revenue that supports the next shows", body: "The model is to put a portion of subscription and other network earnings into new commissions, in-house productions, and paid creative work. Early projects will need separately allocated funding." },
               ].map((item, i) => <article key={item.title}><span className="token-index">0{i + 1}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></article>)}
             </div>
           </div>
         </section>
 
         <section id="discovery" className="network-wrap network-section discovery-section">
-          <div className="section-index"><span>05 / FROM THE FEED TO YOUR NEXT FAVORITE</span></div>
-          <div className="section-heading"><h2>A moment hooks you.<br /><span>A world brings you back.</span></h2><p className="network-copy">Great entertainment can start with a short scene. Our plan connects those first encounters to the people and shows behind them.</p></div>
+          <div className="section-index"><span>05 / DISCOVERY TO PREMIERE</span></div>
+          <div className="section-heading"><h2>A moment hooks you.<br /><span>A world brings you back.</span></h2><p className="network-copy">Short-form is the introduction. A great scene can find its audience in the feed, then bring them here to follow the show behind it.</p></div>
           <div className="discovery-path">
             {[
               { number: "01", title: "Find it in the feed.", body: "A scene, a character, a moment worth sharing. Previews introduce the show wherever you’re already watching." },
               { number: "02", title: "Follow it here.", body: "Explore the premise, meet the producer, and follow the journey from preview to production in one place." },
-              { number: "03", title: "Come back for the show.", body: "Selected projects move into development. Premieres and new episodes give the first spark somewhere to go." },
+              { number: "03", title: "Come back for the show.", body: "As selected projects reach release, premieres and new episodes give the first spark somewhere to go. Subscribers get a reason to return." },
             ].map((step) => <article key={step.number}><span className="network-label">{step.number}</span><h3>{step.title}</h3><p>{step.body}</p></article>)}
           </div>
           <p className="discovery-note">Audience response and planned $SWIM holder voting inform selection alongside story, craft, and production feasibility.</p>
@@ -185,23 +155,23 @@ export default function Home() {
 
         <section id="roadmap" className="network-wrap network-section">
           <div className="section-index"><span>06 / BUILDING THE NETWORK</span></div>
-          <div className="section-heading"><h2>Building toward<br /><span>something worth watching.</span></h2><p className="network-copy">Producer development and original programming are at the heart of the plan, from the beginning.</p></div>
+          <div className="section-heading"><h2>The token is the start.<br /><span>Here’s what comes after.</span></h2><p className="network-copy">No finished shows are planned for token launch. These are the milestones between the founding community and a functioning entertainment network.</p></div>
           <div className="schedule">
             {[
-              { phase: "01", title: "Find the voices", body: "Scout producers, curate the first show previews, and publish the $SWIM tokenomics, utility framework, and ICO details ahead of launch." },
-              { phase: "02", title: "Back the first slate", body: "Introduce $SWIM through the planned ICO, open token-based submissions and audience curation, and develop selected pilots for the first slate." },
-              { phase: "03", title: "Give people a reason to return", body: "Launch a deliberate release schedule with premieres, recurring series, and programming that builds an audience for each show." },
-              { phase: "04", title: "Grow the next generation", body: "Reinvest a portion of network earnings in new producers, in-house originals, and further development of the shows audiences connect with." },
+              { phase: "01", title: "Launch $SWIM", body: "Publish tokenomics, intended use of proceeds, eligibility, and launch-day utility before the planned ICO. Establish the founding community and communicate development progress." },
+              { phase: "02", title: "Introduce the first previews", body: "Recruit independent producers and establish budgets for the first development opportunities. Introduce pilot previews and community input as projects become ready." },
+              { phase: "03", title: "Produce the first originals", body: "Select feasible projects, agree paid commissions, and develop the first shows. Publish creative briefs when funded work is available, and share production milestones." },
+              { phase: "04", title: "Open the viewing network", body: "Launch paid subscriptions with programming worth watching and a release schedule. Introduce qualifying subscriber referrals and reinvest a portion of network earnings into the next shows." },
             ].map((item) => <article key={item.phase} className="schedule-row"><span className="schedule-block">PHASE {item.phase}</span><div><h3>{item.title}</h3></div><p>{item.body}</p><ArrowUpRight aria-hidden="true" className="icon-arrow schedule-arrow" /></article>)}
           </div>
-          <p className="schedule-note">The direction is set. Features and timing will evolve as we build.</p>
+          <p className="schedule-note">Milestones depend on funding, producer agreements, and production readiness. Dates will be announced as those requirements are met.</p>
         </section>
 
         <footer className="network-footer">
           <div className="network-wrap">
-            <div className="footer-invite"><h2>Your next favorite show<br />starts somewhere.</h2><a href="#waitlist" className="network-button">Get on the list <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
-            <div className="footer-rule"><a href="#lineup" className="footer-brand" style={displayFont}>[ai swim]</a><nav aria-label="Footer"><a href="#thesis">The network</a><a href="#how">For producers</a><a href="#swim">$SWIM</a></nav></div>
-            <p className="footer-disclaimer">$SWIM is a utility and curation token for the [ai swim] network — it is not a security, an investment contract, or a promise of profit, and nothing on this page is financial advice. Token mechanics, timelines, and features are in design and subject to change before launch.</p>
+            <div className="footer-invite"><h2>Be part of<br />what comes next.</h2><a href="#waitlist" className="network-button">Get on the list <ArrowUpRight aria-hidden="true" className="icon-arrow" /></a></div>
+            <div className="footer-rule"><a href="#top" className="footer-brand" style={displayFont}>[ai swim]</a><nav aria-label="Footer"><a href="#thesis">The network</a><a href="#how">Get involved</a><a href="#swim">$SWIM</a></nav></div>
+            <p className="footer-disclaimer">ai swim is in development. The ICO, token features, shows, subscriptions, and contribution programs described here are planned. Joining the update list does not purchase tokens, reserve paid work, or include a subscription. Earnings require qualifying work or referrals under published terms; token ownership alone does not entitle holders to payments or network revenue.</p>
           </div>
         </footer>
       </main>
