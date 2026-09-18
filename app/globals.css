@@ -493,3 +493,44 @@ body { background: #000; }
   .site-shell .network-header { background: #181318; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .utility-cards article { background: #1b151c; }
 }
+
+/* A shorter landing page: one introduction, token access, contribution, signup. */
+.compact-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding-block: 64px; }
+.compact-intro h2 { margin-top: 20px; font-size: clamp(48px, 6vw, 76px); }
+.compact-intro h2 span, .compact-section-heading h2 span { color: #a39aa0; }
+.compact-intro-copy p { color: #bbb4b8; font-size: 15px; line-height: 1.75; }
+.compact-intro-copy p + p { margin-top: 14px; }
+.compact-intro-copy .network-button { margin-top: 24px; }
+.compact-landing .token-section { padding-block: 48px; }
+.compact-token { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: center; }
+.compact-coin { display: grid; place-items: center; min-width: 0; }
+.compact-coin .swim-coin-display { margin: 0; }
+.compact-token h2 { font-size: clamp(34px, 4vw, 50px); margin-block: 12px 16px; }
+.compact-utilities { display: grid; gap: 12px; margin-block: 24px; list-style: none; }
+.compact-utilities li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #e1d9df; }
+.compact-utilities li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #ff85bd; flex-shrink: 0; }
+.compact-access-note { max-width: 440px; margin-top: 16px; letter-spacing: 0; }
+.compact-contribute { padding-block: 64px 48px; }
+.compact-section-heading h2 { font-size: clamp(30px, 3.8vw, 48px); margin-block: 16px 32px; }
+.compact-contribute .process-step { padding-top: 24px; }
+.compact-contribute .process-step h3 { font-size: 23px; }
+.compact-contribute .process-step p { margin-top: 10px; }
+.compact-backing { display: flex; justify-content: space-between; align-items: center; gap: 32px; border-top: 1px solid #ffffff17; margin-top: 32px; padding-block: 24px 16px; }
+.compact-backing p { max-width: 620px; color: #c2b9bf; font-size: 14px; line-height: 1.7; }
+.compact-backing a { flex-shrink: 0; }
+.compact-landing .signup-section { border-top: 1px solid #ffffff17; padding-block: 40px; gap: 40px; }
+.compact-landing .signup-section h2 { font-size: clamp(32px, 4vw, 48px); margin: 0 0 12px; }
+.compact-landing .network-footer { padding-block: 0 24px; }
+.compact-landing .footer-rule { border-top: 0; }
+@media (max-width: 700px) {
+  .compact-intro { grid-template-columns: 1fr; gap: 24px; padding-block: 40px; }
+  .compact-token { grid-template-columns: 1fr; gap: 24px; }
+  .compact-landing .token-section { padding-block: 32px 40px; }
+  .compact-coin .swim-coin-stage { height: 270px; }
+  .compact-coin .swim-coin-control { width: 230px; height: 230px; }
+  .compact-contribute { padding-block: 40px 32px; }
+  .compact-contribute .process-step { padding: 20px 0; }
+  .compact-contribute .process-step:first-child { padding-top: 20px; }
+  .compact-backing { display: grid; gap: 16px; margin-top: 8px; }
+  .compact-landing .signup-section { gap: 24px; }
+}
