@@ -544,14 +544,14 @@ body { background: #000; }
 .teaser-caption button { display: grid; place-items: center; flex-shrink: 0; width: 32px; height: 32px; border: 1px solid #ffffff26; border-radius: 50%; background: #ffffff09; cursor: pointer; }
 .teaser-window { overflow: hidden; }
 .teaser-track { display: flex; width: max-content; animation: teaser-drift 45s linear infinite; animation-play-state: var(--ambient-play-state, paused); }
-.teaser-group { display: flex; gap: 16px; padding-right: 16px; }
+.teaser-group { display: flex; flex-shrink: 0; gap: 16px; padding-right: 16px; }
 .teaser-card { position: relative; display: block; width: 260px; height: 310px; flex-shrink: 0; overflow: hidden; border-radius: 16px; border: 1px solid #ffffff22; background: #211821; }
 .teaser-card img { object-fit: cover; object-position: top; transition: transform 300ms ease; }
 .teaser-card::after { content: ''; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, #000a); pointer-events: none; }
 .teaser-card:hover img { transform: scale(1.025); }
 .teaser-lock { position: absolute; z-index: 1; bottom: 14px; left: 14px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid #ffffff30; border-radius: 999px; padding: 7px 10px; background: #151015ed; font: 8px/1.3 var(--font-geist-mono), monospace; letter-spacing: .06em; }
-.teaser-track.is-paused, .teaser-window:hover .teaser-track, .teaser-window:focus-within .teaser-track { animation-play-state: paused; }
-.teaser-window:focus-within { overflow-x: auto; }
+.teaser-track.is-paused, .teaser-window:has(.teaser-card:focus-visible) .teaser-track { animation-play-state: paused; }
+.teaser-window:has(.teaser-card:focus-visible) { overflow-x: auto; }
 @keyframes teaser-drift { to { transform: translateX(-50%); } }
 @media (max-width: 700px) {
   .teaser-card { width: 210px; height: 255px; }
@@ -562,7 +562,7 @@ body { background: #000; }
 @media (prefers-reduced-motion: reduce) {
   .teaser-track { animation: none; }
   .teaser-window { overflow-x: auto; }
-  .teaser-group[aria-hidden="true"] { display: none; }
+  .teaser-group[aria-hidden="true"], .teaser-card[aria-hidden="true"] { display: none; }
   .teaser-card img { transition: none; }
   .teaser-caption button { display: none; }
 }

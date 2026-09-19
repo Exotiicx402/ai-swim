@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useVisibleAnimation } from "@/hooks/use-visible-animation";
 import { LockKeyhole, Pause, Play } from "lucide-react";
 
@@ -17,6 +17,18 @@ const teasers = [
 export function ShowTeasers() {
   const animationRef = useVisibleAnimation();
   const [paused, setPaused] = useState(false);
+  const [repeats, setRepeats] = useState(3);
+  useEffect(() => {
+    const element = animationRef.current;
+    if (!element) return;
+    // Each half must fill the viewport, including at the loop boundary.
+    const observer = new ResizeObserver(([entry]) => {
+      const cardStride = window.matchMedia("(max-width: 700px)").matches ? 222 : 276;
+      setRepeats(Math.max(1, Math.ceil(entry.contentRect.width / (teasers.length * cardStride))));
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [animationRef]);
   return (
     <div ref={animationRef} className="show-teasers">
       <div className="network-wrap teaser-caption">
@@ -24,12 +36,12 @@ export function ShowTeasers() {
         <button type="button" aria-label={paused ? "Resume show banner" : "Pause show banner"} aria-pressed={paused} onClick={() => setPaused(!paused)}>{paused ? <Play size={14} /> : <Pause size={14} />}</button>
       </div>
       <div className="teaser-window" role="region" aria-label="Show artwork teasers">
-        <div className={`teaser-track${paused ? " is-paused" : ""}`}>
-          {[0, 1].map((copy) => <div className="teaser-group" key={copy} aria-hidden={copy === 1 ? true : undefined} inert={copy === 1 ? true : undefined}>
-            {teasers.map((show) => <Link href="/dashboard" className="teaser-card" key={show.title} tabIndex={copy === 1 ? -1 : undefined} aria-label={`${show.title} — holder access`}>
-              <Image src={show.image} alt={show.title} fill sizes="(max-width: 700px) 210px, 260px" />
+        <div className={`teaser-track${paused ? " is-paused" : ""}`} style={{ animationDuration: `${repeats * 60}s` }}>
+          {[0, 1].map((copy) => <div className="teaser-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
+            {Array.from({ length: repeats }, (_, repeat) => teasers.map((show) => <Link href="/dashboard" className="teaser-card" key={`${repeat}-${show.title}`} aria-hidden={copy > 0 || repeat > 0 ? true : undefined} tabIndex={copy > 0 || repeat > 0 ? -1 : undefined} aria-label={`${show.title} — holder access`}>
+              <Image src={show.image} alt={show.title} fill loading="eager" sizes="(max-width: 700px) 210px, 260px" />
               <span className="teaser-lock"><LockKeyhole size={12} aria-hidden="true" /> HOLDER ACCESS</span>
-            </Link>)}
+            </Link>))}
           </div>)}
         </div>
       </div>
